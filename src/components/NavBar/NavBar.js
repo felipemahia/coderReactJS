@@ -6,11 +6,11 @@ const NavBar = () => {
             <div className="header__contenedor">
                     <img className="header__logo" src="./assets/img/LOGO.png" alt="LogoVapeLife" />
                 <div className="header__navLista">
-                    
-                        <li><button className='btn-outline-primary'>Inicio</button></li>
-                        <li><button className='btn-outline-primary'>Equipos</button></li>
-                        <li><button className='btn-outline-primary'>Liquidos</button></li>
-                    
+                    <ul>
+                        <li><button>Inicio</button></li>
+                        <li><button>Equipos</button></li>
+                        <li><button>Liquidos</button></li>
+                        </ul>
                 </div>
             </div>
         </div>

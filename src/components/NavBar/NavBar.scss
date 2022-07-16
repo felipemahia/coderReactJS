@@ -1,19 +1,19 @@
 .header {
-    display: flex;
-    height: 100px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-     background: -webkit-linear-gradient(to right, #0575e6, #021b79);
+    float: left;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(to right, #0575e6, #021b79);
     background: linear-gradient(to right, #0575e6, #021b79);
     margin-bottom: 50px;
     max-height: 8%;
-    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    
 
     &__contenedor {
         max-width: 1200px;
-        margin: 0 auto;
         height: 100%;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
@@ -28,14 +28,21 @@
         padding: 8px;
     }
 
-
-
-    &__navLista {
+    ul {
+        list-style: none;
         display: flex;
-
         li {
-            display: flex;
-            list-style: none;
-        }
-    }
+            margin: 0px 10px;
+            button {
+                color: white;
+                background: none;
+                border: none;
+                font-size: 18px;
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }        
+    } 
 }
