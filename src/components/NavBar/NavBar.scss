@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    height: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+     background: -webkit-linear-gradient(to right, #0575e6, #021b79);
+    background: linear-gradient(to right, #0575e6, #021b79);
+    margin-bottom: 50px;
+    max-height: 8%;
+    z-index: 100;
+
+    &__contenedor {
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    &__logo {
+        display: flex;
+        width: 120px;
+        max-height: 120px;
+        display: block;
+        margin: 0 auto;
+        padding: 8px;
+    }
+
+
+
+    &__navLista {
+        display: flex;
+
+        li {
+            display: flex;
+            list-style: none;
+        }
+    }
+}
