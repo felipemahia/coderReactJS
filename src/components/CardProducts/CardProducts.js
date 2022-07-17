@@ -1,14 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const cardProduct = () => {
+const CardProducts = ({title, description, price, img}) => {
     return (
         <Card border="secondary" style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="/assets/img/Burgers1.png" />
+            <Card.Img variant="top" src={img} />
             <Card.Body>
-                <Card.Title>Producto 1</Card.Title>
+                <Card.Title>{title}</Card.Title>
                 <Card.Text>
-                    Descripción del producto
+                    {description}, {price}
                 </Card.Text>
                 <Button variant="primary">Comprar</Button>
             </Card.Body>
@@ -16,4 +16,4 @@ const cardProduct = () => {
     );
 }
 
-export default cardProduct
+export default CardProducts

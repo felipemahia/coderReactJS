@@ -3,17 +3,20 @@ import './Estilos.css';
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap';
 import './components/NavBar/NavBar.scss';
-import CardProduct from './components/CardProducts/CardProducts';
+import CardContainer from './components/CardContainer/CardContainer';
 
 function Header() {
   return (
-    <div className='container'>
-      <div className='container'>
+    <div>
+      <div>
         <NavBar />
       </div>
       <div className='container'>
-        <h1>Productos</h1>
-        <CardProduct />
+        <div className='row'>
+        <CardContainer section="Hamburguesas" />
+        <CardContainer section="Sushi" />
+        <CardContainer section="Otros éxitos ♥" />
+        </div>
       </div>
     </div>
   );
