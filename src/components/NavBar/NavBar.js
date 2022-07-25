@@ -1,6 +1,5 @@
 import './NavBar.scss' 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
+import CartWidget from './CartWidget'
 
 const NavBar = () => {
     return (
@@ -13,7 +12,7 @@ const NavBar = () => {
                         <li><button>Hamburguesas</button></li>
                         <li><button>Sushi</button></li>
                         <li><button>Locales</button></li>
-                        <li style={{color: 'white'}}><button><FontAwesomeIcon icon={faCartShopping}/></button></li>
+                        <CartWidget />
                         </ul>
                 </div>
             </div>

@@ -1,5 +1,12 @@
+//import {useEffect} from 'react'
 import CardProducts from "../CardProducts/CardProducts.js";
 import CardGroup from 'react-bootstrap/CardGroup';
+
+/* const ItemsCards = () => {
+    useEffect(() => {
+        fetch()          Acá voy a llamar los productos que están abajo desde un JSON mediante fetch (mi mayor enemigo fetch, te juro).
+    })
+} */
 
 const CardContainer = ({ section }) => {
     return (

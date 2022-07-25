@@ -1,0 +1,12 @@
+.contadorProductos {
+    display: flex;
+    justify-content: center;
+
+    button.btn.btn-outline-danger.btn-sm {
+        margin: 5px;
+    }
+
+    p {
+        size: 20px;
+    }
+}

@@ -1,5 +1,8 @@
+
+import './CardProducts.scss'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import ItemCount from '../ItemCount/ItemCount';
 
 const CardProducts = ({title, description, price, img}) => {
     return (
@@ -10,6 +13,7 @@ const CardProducts = ({title, description, price, img}) => {
                 <Card.Text>
                     {description}, {price}
                 </Card.Text>
+                <ItemCount/>
                 <Button variant="primary">Comprar</Button>
             </Card.Body>
         </Card>
