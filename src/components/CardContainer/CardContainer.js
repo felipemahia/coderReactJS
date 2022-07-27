@@ -1,23 +1,39 @@
-//import {useEffect} from 'react'
-import CardProducts from "../CardProducts/CardProducts.js";
-import CardGroup from 'react-bootstrap/CardGroup';
-
-/* const ItemsCards = () => {
-    useEffect(() => {
-        fetch()          Acá voy a llamar los productos que están abajo desde un JSON mediante fetch (mi mayor enemigo fetch, te juro).
-    })
-} */
+import { useEffect, useState } from 'react';
+import products from '../../utils/productsMock';
+import CardList from '../CardList/CardList';
 
 const CardContainer = ({ section }) => {
+    const [listProducts, setListProducts] = useState([]);
+
+    const getProducts = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products)
+        }, 2000)
+    })
+
+    useEffect(() => {
+        /* No quiero NI ESCRIBIR fetch, mi archienemigo. Si así funciona, así está bien xD */
+        getProducts
+            .then((res) => {
+                setListProducts(res);
+            })
+            .catch((error) => {
+            })
+            .finally(() => {
+            })
+    }, [])
+
+/* 
+Manu me sale este warning cuando lo paso por useEffect, y no se qué es:
+WARNING in [eslint]
+src\components\CardContainer\CardContainer.js
+Line 24:8:  React Hook useEffect has a missing dependency: 'getProducts'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+ */
+
     return (
         <div>
             <h2>{section}</h2>
-            <CardGroup>
-                <CardProducts title="Doble Carne" description="Dos carnes jugosas, doble sabor, más placer" price="$470" img="./assets/img/doblecarne.jpg" />
-                <CardProducts title="Extra Queso" description="Para los amantes del queso, QUESO" price="$480" img="./assets/img/extraqueso.jpg" />
-                <CardProducts title="Veggie" description="Opción vegetariana, hamburguesas para tod@s" price="$450" img="./assets/img/Veggie.jpg" />
-                <CardProducts title="Cheese Bomb" description="La especialidad de la casa, si la probas, volvés" price="$500" img="./assets/img/cheeseboomb.jpg" />
-            </CardGroup>
+            <CardList dataProducts={listProducts} />
         </div>
     )
 }
