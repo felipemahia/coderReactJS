@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import products from '../../utils/productsMock';
+import products from '../../utils/productMock';
 import CardList from '../CardList/CardList';
 
 const CardContainer = ({ section }) => {
