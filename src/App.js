@@ -4,6 +4,8 @@ import NavBar from './components/NavBar/NavBar';
 import 'bootstrap';
 import './components/NavBar/NavBar.scss';
 import CardContainer from './components/CardContainer/CardContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function Header() {
   /* fetch('../utils/productsMock.js')
@@ -21,6 +23,9 @@ function Header() {
         <CardContainer section="Hamburguesas" /> {/* como hago acá para pasar solo los type:'hamburguesa' del mock? */}
         <CardContainer section="Sushi" /> {/* idem pero sushi */}
         <CardContainer section="Otros éxitos ♥" /> {/* idem pero otros exitos xD */}
+        </div>
+        <div className='container'>
+        <ItemDetailContainer />
         </div>
       </div>
     </div>

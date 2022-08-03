@@ -23,13 +23,6 @@ const CardContainer = ({ section }) => {
             })
     }, [])
 
-/* 
-Manu me sale este warning cuando lo paso por useEffect, y no se qué es:
-WARNING in [eslint]
-src\components\CardContainer\CardContainer.js
-Line 24:8:  React Hook useEffect has a missing dependency: 'getProducts'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
- */
-
     return (
         <div>
             <h2>{section}</h2>
