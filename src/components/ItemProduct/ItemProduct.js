@@ -1,13 +1,10 @@
-
-import './CardProducts.scss'
+import './ItemProduct.scss'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemCount/ItemCount';
 
-const CardProducts = ({data}) => {
-    const { title, price, description, img, stock } = data
-    /* const data = {title, description, price, img, stock} validar para que no sea data.XXXX*/
-    return (
+const ItemProduct = ({ title, price, description, img, stock }) => {
+        return (
         <Card border="secondary" style={{ width: '18rem' }}>
             <Card.Img variant="top" src={img} />
             <Card.Body>
@@ -25,4 +22,4 @@ const CardProducts = ({data}) => {
     );
 }
 
-export default CardProducts
+export default ItemProduct

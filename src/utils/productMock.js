@@ -73,4 +73,32 @@ const products = [
     }
 ]
 
-export default products
+/* Traigo todos los productos */
+
+export const getProducts = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products)
+        }, 2000)
+    })
+}
+
+/* Los traigo por ID */
+
+export const getProduct = (id) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products[id])
+        }, 2000)
+    })
+}
+
+/* Por type */
+
+export const getProductByType = (typeId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.filter(prod => prod.type === typeId))
+        }, 2000)
+    })
+}

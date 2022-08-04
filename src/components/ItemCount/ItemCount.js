@@ -1,14 +1,20 @@
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 
-const ItemCount = () => {
-    const [counter, setCounter] = useState(1);
+const ItemCount = ({ stock, valInicial, onAdd }) => {
+    const [counter, setCounter] = useState(0);
     const oneMore = () => {
-        setCounter(counter + 1);
+        if (counter > valInicial){
+        setCounter(counter + 1)
     }
+    }
+
     const oneLess = () => {
+        if (counter < stock ) {
         setCounter(counter - 1);
     }
+    }
+    
     return (
     <div className='contadorProductos'>
         <Button variant="outline-danger" size="sm" onClick={oneLess}>-</Button>

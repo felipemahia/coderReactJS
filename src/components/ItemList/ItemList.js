@@ -1,16 +1,16 @@
-import CardProducts from "../CardProducts/CardProducts.js";
+import ItemProduct from "../ItemProduct/ItemProduct";
 import CardGroup from 'react-bootstrap/CardGroup';
 
-const CardList = ({ dataProducts }) => {
+const ItemList = ({ dataProducts }) => {
     return (
         <>
         <CardGroup>
             {dataProducts.map( (product) => {
-                return <CardProducts key={product.id} data={product} />
+                return <ItemProduct key={product.id} data={product} />
             })}
         </CardGroup>
         </>
     )
 }
 
-export default CardList
+export default ItemList
