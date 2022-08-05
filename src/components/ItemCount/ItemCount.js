@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 
-const ItemCount = ({ stock, valInicial, onAdd }) => {
+const ItemCount = ({ stock, valInicial }) => {
     const [counter, setCounter] = useState(0);
     const oneMore = () => {
         if (counter > valInicial){

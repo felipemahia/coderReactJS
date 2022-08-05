@@ -1,9 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {Routes,Route} from 'react-router-dom'
 import './Estilos.css';
-import NavBar from './components/NavBar/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import './components/NavBar/NavBar.scss';
+import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+//import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+//import ItemDetail from './components/ItemDetail/ItemDetail';
+
 
 function Header() {
   return (
@@ -11,13 +15,10 @@ function Header() {
       <div>
         <NavBar />
       </div>
-      <div className='container'>
-        <div className='row'>
-          <ItemListContainer section="Hamburguesas" /> {/* como hago acá para pasar solo los type:'hamburguesa' del mock? */}
-          <ItemListContainer section="Sushi" /> {/* idem pero sushi */}
-          <ItemListContainer section="Otros éxitos ♥" /> {/* idem pero otros exitos xD */}
-        </div>
-      </div>
+      <Routes>
+        <Route path='/' section="Nuestros Productos" element = {<ItemListContainer />}/>
+        <Route path='/ItemDetail/:type' element='Acá iría el itemdetailcontainer si me funcionara bien :C' />
+      </Routes>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import ItemList from '../ItemList/ItemList';
 import { useEffect, useState } from 'react';
 import { getProducts, getProductByType } from '../../utils/productMock'; 
 import { useParams } from 'react-router-dom'
+import 'bootstrap';
 
 
 const ItemListContainer = ({ section }) => {
@@ -19,6 +20,7 @@ const ItemListContainer = ({ section }) => {
             console.log(error);
         })
         .finally(() => {
+            setLoading(false)
         })
     }, [typeId])
     if(loading) {
@@ -26,7 +28,7 @@ const ItemListContainer = ({ section }) => {
     }
 
     return (
-        <div>
+        <div className='row'>
             <h2>{section}</h2>
             <ItemList dataProducts={listProducts} />
         </div>
