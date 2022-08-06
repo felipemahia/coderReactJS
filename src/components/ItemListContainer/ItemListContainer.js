@@ -1,31 +1,31 @@
 import ItemList from '../ItemList/ItemList';
 import { useEffect, useState } from 'react';
-import { getProducts, getProductByType } from '../../utils/productMock'; 
-import { useParams } from 'react-router-dom'
 import 'bootstrap';
+import products from '../../utils/productMock';
 
 
 const ItemListContainer = ({ section }) => {
-    const [listProducts, setListProducts] = useState([])
-    const [loading, setLoading] = useState(true)
-    const {typeId} = useParams()
+    const [listProducts, setListProducts] = useState([]);
+    //const filterId = products1.find (( products) => products.type === "Sushi")
+
+    const traerProductos = () => new Promise ((resolve, reject) =>{
+        setTimeout(() =>{
+            resolve(products)
+        }, 2000)
+    })
 
     useEffect(() => {
-        
-        const asyncFunction = typeId ? getProductByType : getProducts;
-        asyncFunction(typeId).then(response => {
-            setListProducts(response)
+        const getProduct = async () => {
+            try {
+              const responseLog = await traerProductos()
+              setListProducts(responseLog)
+            }
+            catch (error) {
+              console.log(error)
+            }
+          }
+          getProduct()
         })
-        .catch((error) => {
-            console.log(error);
-        })
-        .finally(() => {
-            setLoading(false)
-        })
-    }, [typeId])
-    if(loading) {
-        return <h2>Cargando...</h2>
-    }
 
     return (
         <div className='row'>

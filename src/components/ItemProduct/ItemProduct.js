@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemProduct = ({ data }) => {
-    const {title, price, description, img, stock} =data
+    const {title, price, description, img, stock} = data
         return (
         <Card border="secondary" style={{ width: '18rem' }}>
             <Card.Img variant="top" src={img} />

@@ -5,8 +5,7 @@ import 'bootstrap';
 import './components/NavBar/NavBar.scss';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-//import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-//import ItemDetail from './components/ItemDetail/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function Header() {
@@ -15,10 +14,12 @@ function Header() {
       <div>
         <NavBar />
       </div>
-      <Routes>
+{/*       <Routes>
         <Route path='/' section="Nuestros Productos" element = {<ItemListContainer />}/>
         <Route path='/ItemDetail/:type' element='Acá iría el itemdetailcontainer si me funcionara bien :C' />
-      </Routes>
+      </Routes> */}
+      <ItemListContainer />
+      {/* <ItemDetailContainer /> */}
     </div>
   );
 }

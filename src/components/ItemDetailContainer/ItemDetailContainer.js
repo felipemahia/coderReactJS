@@ -1,33 +1,37 @@
-import { useState, useEffect } from 'react'
-import { getProduct } from '../../utils/productMock';
-import ItemDetail from '../ItemDetail/ItemDetail'
-import { useParams } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import products from '../../utils/productMock';
+import ItemDetail from '../ItemDetail/ItemDetail';
+//import { useParams } from "react-router-dom";
 
-const ItemListContainer = (props) => {
+const ItemDetailContainer = () => {
 
-    const [product, setProduct] = useState([])
-    const [loading, setLoading] = useState(true)
-    const { productId } = useParams()
+    const [producto, setProducto] = useState([])
+    //const {id} = useParams()
+    const filterId = products.find (products => products.id === Number(4))
 
-    useEffect(() =>{
-        getProduct(productId).then(response =>{
-            setProduct(response)
-        }).catch (error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })
-    }, [productId ]) 
-
-    if(loading) {
-        return <h2>Cargando...</h2>
-    }
-
-    return (
+    const getItem = () => new Promise ((resolve, reject )=>{
+        setTimeout(() => {
+            resolve(filterId)
+        }, 2000);
+    })
+    useEffect(() => {
+        const ItemAwait = async () => {
+            try{
+                const responseLog = await getItem ()
+                setProducto(responseLog)
+            }
+            catch(error) {
+                console.log(error);
+            }
+        }
+        ItemAwait()
+    }, [])
+    return(
         <div className="container">
-            <ItemDetail product={product}/>
+            <ItemDetail data={producto} />
+            {console.log(producto[0])}
         </div>
     )
-};
+}
 
-export default ItemListContainer;
+export default ItemDetailContainer

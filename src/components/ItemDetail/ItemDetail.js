@@ -1,14 +1,11 @@
 import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
 
 
-const ItemDetail = ({product}) => {
-    const {title, price, description,img, stock} = product
+const ItemDetail = ({ data }) => {
+    const {title, price, description, img, stock} = data;
     return(
-        <>
         <Card border="secondary" style={{ width: '18rem' }}>
             <Card.Img variant="top" src={img} />
             <Card.Body>
@@ -23,7 +20,6 @@ const ItemDetail = ({product}) => {
                 <Button variant="primary">Comprar</Button>
             </Card.Body>
         </Card>
-        </>
     )
 }
 

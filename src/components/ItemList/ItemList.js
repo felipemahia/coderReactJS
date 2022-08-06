@@ -5,9 +5,7 @@ const ItemList = ({ dataProducts }) => {
     return (
         <>
         <CardGroup>
-            {dataProducts.map( (product) => {
-                return <ItemProduct key={product.id} data={product} />
-            })}
+        {dataProducts.map(product => <ItemProduct key ={product.id} data={product}/>)}
         </CardGroup>
         </>
     )
