@@ -3,8 +3,12 @@ import './Estilos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import './components/NavBar/NavBar.scss';
+import Home from './pages/Home';
+import Hamburguesas from './pages/Hamburguesas';
+import Sushi from './pages/Sushi';
+import Contact from './pages/Contacto';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Footer from './Footer/Footer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
@@ -14,12 +18,16 @@ function Header() {
       <div>
         <NavBar />
       </div>
-{/*       <Routes>
-        <Route path='/' section="Nuestros Productos" element = {<ItemListContainer />}/>
-        <Route path='/ItemDetail/:type' element='Acá iría el itemdetailcontainer si me funcionara bien :C' />
-      </Routes> */}
-      <ItemListContainer />
-      {/* <ItemDetailContainer /> */}
+       <Routes>
+        <Route path='/' element = {<Home />}/>
+        <Route path='/contacto' element={< Contact />} />
+        <Route path='/sushi' element={<Sushi />} />
+        <Route path='/hamburguesas' element={<Hamburguesas />} />
+
+      </Routes>
+      {/* <ItemListContainer /> */}
+      {/*<ItemDetailContainer />*/}
+      <Footer />
     </div>
   );
 }

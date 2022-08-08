@@ -8,8 +8,8 @@ const ItemListContainer = ({ section }) => {
     const [listProducts, setListProducts] = useState([]);
     //const filterId = products1.find (( products) => products.type === "Sushi")
 
-    const traerProductos = () => new Promise ((resolve, reject) =>{
-        setTimeout(() =>{
+    const traerProductos = () => new Promise((resolve, reject) => {
+        setTimeout(() => {
             resolve(products)
         }, 2000)
     })
@@ -17,15 +17,15 @@ const ItemListContainer = ({ section }) => {
     useEffect(() => {
         const getProduct = async () => {
             try {
-              const responseLog = await traerProductos()
-              setListProducts(responseLog)
+                const responseLog = await traerProductos()
+                setListProducts(responseLog)
             }
             catch (error) {
-              console.log(error)
+                console.log(error)
             }
-          }
-          getProduct()
-        })
+        }
+        getProduct()
+    })
 
     return (
         <div className='row'>
