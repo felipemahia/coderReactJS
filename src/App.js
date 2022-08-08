@@ -9,7 +9,7 @@ import Sushi from './pages/Sushi';
 import Contact from './pages/Contacto';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './Footer/Footer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+//import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function Header() {
