@@ -10,7 +10,7 @@ import Contact from './pages/Contacto';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './Footer/Footer';
 //import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-
+import Detail from './pages/Detail';
 
 function Header() {
   return (
@@ -20,9 +20,10 @@ function Header() {
       </div>
        <Routes>
         <Route path='/' element = {<Home />}/>
+        <Route path='/hamburguesas/:id' element={<Hamburguesas />} />
+        <Route path='/sushi/:id' element={<Sushi />} />
         <Route path='/contacto' element={< Contact />} />
-        <Route path='/sushi' element={<Sushi />} />
-        <Route path='/hamburguesas' element={<Hamburguesas />} />
+        <Route path='/producto/:id' element={<Detail/>} />
 
       </Routes>
       {/* <ItemListContainer /> */}
