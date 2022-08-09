@@ -28,9 +28,11 @@ const ItemDetailContainer = () => {
         ItemAwait()
     }, [])
     return(
+        
         <div className="container">
+            {console.log("Prueba 1: ", producto[0])}
             <ItemDetail data={producto} />
-            {/* {console.log(producto[0])} */}
+            
         </div>
     )
 }
