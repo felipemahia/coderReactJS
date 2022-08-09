@@ -22,9 +22,9 @@ const ItemProduct = ({ data }) => {
                         </Card.Text>
                         {/* <Card.Text className='derecha'>{stock}</Card.Text> */}
                         <ItemCount />
-                        <Link to={`/products/${id}`}>
+                        {/* <Link to={`/products/${id}`}>
                             <Button variant="primary">Comprar</Button>
-                        </Link>
+                        </Link> */}
                     </Card.Body>
                 </Card>
             </Col>

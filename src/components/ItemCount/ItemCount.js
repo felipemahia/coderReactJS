@@ -1,43 +1,30 @@
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
+import {Link} from 'react-router-dom'
 
-/* const ItemCount = ({ stock, }) => {
-    const [counter, setCounter] = useState(1);
+const ItemCount = ({ stock, setQuantitySelected, id }) => {
+    let initialStock = stock;
+    const [inCart, setIncart] = useState(1)
 
-    const oneLess = () => {
-        if (counter < stock) {
-            setCounter(counter - 1);
+    const HandleQ = (e) => {
+        if (initialStock) {
+            setIncart(inCart + e)
         }
     }
-    const oneMore = () => {
-        if (counter > 1) {
-            setCounter(counter + 1)
-        }
-    } */
+    const onAdd = () => {
+        setQuantitySelected(inCart)
 
-const ItemCount = ({ stock }) => {
-    const [counter, setCounter] = useState(1);
-
-        function ingSig(signo) {
-            if (signo === "-") {
-                if (counter > 1) {
-                    setCounter(counter - 1);
-                }
-            } else if (signo === "+") {
-                if (counter < stock) {
-                    setCounter(counter + 1);
-                }
-            }
-        }
-
-
-        return (
-            <div className='contadorProductos'>
-                <Button variant="outline-danger" size="sm" onClick={() => ingSig("-")}>-</Button>
-                <p>{counter}</p>
-                <Button variant="outline-danger" size="sm" onClick={() => ingSig("+")}>+</Button>
-            </div>
-        )
     }
+    return (
+        <div className='contadorProductos'>
+            <Button variant="outline-danger" size="sm" onClick={() => HandleQ(-1)} disabled={inCart === 1}>-</Button>
+            {/* <p>{counter}</p> */}
+            <Link to={`/products/${id}`}>
+                {' '}<Button onClick={onAdd} variant="outline-primary">Agregar al carrito</Button>{' '}
+            </Link>
+            <Button variant="outline-danger" size="sm" onClick={() => HandleQ(1)} disabled={inCart === initialStock}>+</Button>
+        </div>
+    )
+}
 
-    export default ItemCount
+export default ItemCount
