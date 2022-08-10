@@ -6,7 +6,7 @@ const products = [
         price: "$470",
         img: "./assets/img/doblecarne.jpg",
         stock: 15,
-        type: "Hamburguesa"
+        type: "hamburguesas"
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const products = [
         price: "$480",
         img: "./assets/img/extraqueso.jpg",
         stock: 10,
-        type: "Hamburguesa"
+        type: "hamburguesas"
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const products = [
         price: "$450",
         img: "./assets/img/Veggie.jpg",
         stock: 8,
-        type: "Hamburguesa"
+        type: "hamburguesas"
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const products = [
         price: "$500",
         img: "./assets/img/cheeseboomb.jpg",
         stock: 7,
-        type: "Hamburguesa"
+        type: "hamburguesas"
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ const products = [
         price: "$620",
         img: "./assets/img/Sushi1.jpg",
         stock: 22,
-        type: "Sushi"
+        type: "sushi"
     },
     {
         id: 6,
@@ -51,7 +51,7 @@ const products = [
         price: "$580",
         img: "./assets/img/Sushi2.jpg",
         stock: 10,
-        type: "Sushi"
+        type: "sushi"
     },
     {
         id: 7,
@@ -60,7 +60,7 @@ const products = [
         price: "$600",
         img: "./assets/img/Sushi3.jpg",
         stock: 8,
-        type: "Sushi"
+        type: "sushi"
     },
     {
         id: 8,
@@ -69,7 +69,7 @@ const products = [
         price: "$500",
         img: "./assets/img/Sushi4.jpg",
         stock: 11,
-        type: "Sushi"
+        type: "sushi"
     }
 ]
 export default products

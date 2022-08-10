@@ -8,6 +8,7 @@ const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState([])
     const {id} = useParams()
+    
     const filterId = products.find (products => products.id === Number(id))
 
     const getItem = () => new Promise ((resolve, reject )=>{

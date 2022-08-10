@@ -11,17 +11,17 @@ const ItemCount = ({ stock, setQuantitySelected, id }) => {
             setIncart(inCart + e)
         }
     }
-    const onAdd = () => {
+    /* const onAdd = () => {
         setQuantitySelected(inCart)
 
-    }
+    } */
     return (
         <div className='contadorProductos'>
             <Button variant="outline-danger" size="sm" onClick={() => HandleQ(-1)} disabled={inCart === 1}>-</Button>
             {/* <p>{counter}</p> */}
-            <Link to={`/products/${id}`}>
+            {/* <Link to={`/products/${id}`}>
                 {' '}<Button onClick={onAdd} variant="outline-primary">Agregar al carrito</Button>{' '}
-            </Link>
+            </Link> */}
             <Button variant="outline-danger" size="sm" onClick={() => HandleQ(1)} disabled={inCart === initialStock}>+</Button>
         </div>
     )

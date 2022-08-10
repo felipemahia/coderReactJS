@@ -1,7 +1,9 @@
+import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer"
+
 const Hamburguesas = () => {
     return(
         <h2>
-            Hamburguesas
+            <ItemDetailContainer />
         </h2>
     )
 }

@@ -10,7 +10,9 @@ import Contact from './pages/Contacto';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './Footer/Footer';
 //import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Detail from './pages/Detail';
+//import Detail from './pages/Detail';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function Header() {
   return (
@@ -20,11 +22,13 @@ function Header() {
       </div>
        <Routes>
         <Route path='/' element = {<Home />}/>
-        <Route path='/hamburguesas/:id' element={<Hamburguesas />} />
+        <Route path='/products/:id' element={<ItemDetailContainer />} />
+        <Route path='/category/:categoryId' element={<ItemListContainer />}/> 
+
         <Route path='/sushi/:id' element={<Sushi />} />
         <Route path='/contacto' element={< Contact />} />
-        <Route path='/producto/:id' element={<Detail/>} />
-
+        {/* <Route path='/producto/:id' element={<Detail/>} /> */}
+        <Route path='*' element={<h2>Error 404 - not found</h2>} />
       </Routes>
       {/* <ItemListContainer /> */}
       {/*<ItemDetailContainer />*/}

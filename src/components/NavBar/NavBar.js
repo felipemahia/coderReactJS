@@ -12,8 +12,8 @@ const NavBar = () => {
                 <div className="header__navLista">
                     <ul>
                         <Link to='/'><li><button>Inicio</button></li></Link>
-                        <Link to='/hamburguesas'><li><button>Hamburguesas</button></li></Link>
-                        <Link to='/sushi'><li><button>Sushi</button></li></Link>
+                        <Link to='/category/hamburguesas'><li><button>Hamburguesas</button></li></Link>
+                        <Link to='/category/sushi'><li><button>Sushi</button></li></Link>
                         <Link to='/contacto'><li><button>Contacto</button></li></Link>
                         <CartWidget />
                         </ul>
