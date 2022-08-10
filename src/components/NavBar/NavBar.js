@@ -7,7 +7,7 @@ const NavBar = () => {
         <div className="header">
             <div className="header__contenedor">
                 <Link to='/'>
-                    <img className="header__logo" src="./assets/img/LOGO.png" alt="Logo BBC Burger and Sushi" />
+                    <img className="header__logo" src="../assets/img/LOGO.png" alt="Logo BBC Burger and Sushi" />
                 </Link>
                 <div className="header__navLista">
                     <ul>

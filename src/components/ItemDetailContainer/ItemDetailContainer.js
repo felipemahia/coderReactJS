@@ -3,6 +3,7 @@ import products from '../../utils/productMock';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from "react-router-dom";
 import "./ItemDetailContainer.scss"
+import Container from "react-bootstrap/esm/Container";
 
 const ItemDetailContainer = () => {
 
@@ -31,9 +32,9 @@ const ItemDetailContainer = () => {
     return(
         
         <div className="container">
-            {console.log("Prueba 1: ", producto[0])}
+            <Container>
             <ItemDetail data={producto} />
-            
+            </Container>
         </div>
     )
 }

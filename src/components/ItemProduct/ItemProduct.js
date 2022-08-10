@@ -20,8 +20,6 @@ const ItemProduct = ({ data }) => {
                         <Card.Text>
                             {description}, {price}
                         </Card.Text>
-                        {/* <Card.Text className='derecha'>{stock}</Card.Text> */}
-                        {/* <ItemCount /> */}
                         <Link to={`/products/${id}`}>
                             <Button variant="primary">Ver más</Button>
                         </Link>

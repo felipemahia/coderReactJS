@@ -14,10 +14,9 @@ const ItemDetail = ({ data }) => {
                     {description}, {price}
                 </Card.Text>
                 <Card.Text>
-                    {stock}
+                    <p>Tenemos un stock de: {stock}</p>
                 </Card.Text>
                 <ItemCount/>
-                <Button variant="primary">Comprar</Button>
             </Card.Body>
         </Card>
     )

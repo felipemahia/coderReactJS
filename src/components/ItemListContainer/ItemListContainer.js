@@ -1,5 +1,5 @@
 import ItemList from '../ItemList/ItemList';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap';
 import products from '../../utils/productMock';
 import { useParams } from 'react-router-dom';
@@ -10,9 +10,9 @@ const ItemListContainer = ({ section }) => {
     const { categoryId } = useParams()
     //const filterType = products.filter((products) => products.type === type)
 
-    const traerProductos = (type) => new Promise((resolve, reject) => {
+    const traerProductos = (categoryId) => new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (type) {
+            if (categoryId) {
                 resolve(products.filter((products) => products.type === categoryId))
             } else {
                 resolve(products)

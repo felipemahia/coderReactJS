@@ -1,9 +1,10 @@
 import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer"
+import products from "../utils/productMock"
 
 const Hamburguesas = () => {
     return(
         <h2>
-            <ItemDetailContainer />
+            <ItemDetailContainer data={products} />
         </h2>
     )
 }

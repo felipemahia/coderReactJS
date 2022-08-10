@@ -1,30 +1,40 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 
 const ItemCount = ({ stock, setQuantitySelected, id }) => {
-    let initialStock = stock;
-    const [inCart, setIncart] = useState(1)
+    const [counter, setCounter] = useState(1)
 
-    const HandleQ = (e) => {
-        if (initialStock) {
-            setIncart(inCart + e)
-        }
+    const oneMore = () =>{
+        setCounter(counter + 1)
     }
-    /* const onAdd = () => {
-        setQuantitySelected(inCart)
+    const oneLess = () =>{
+        setCounter(counter - 1)
+    }
+    const onAdd = () => {
+        setQuantitySelected(counter)
+    }
 
-    } */
+
     return (
         <div className='contadorProductos'>
-            <Button variant="outline-danger" size="sm" onClick={() => HandleQ(-1)} disabled={inCart === 1}>-</Button>
-            {/* <p>{counter}</p> */}
-            {/* <Link to={`/products/${id}`}>
-                {' '}<Button onClick={onAdd} variant="outline-primary">Agregar al carrito</Button>{' '}
-            </Link> */}
-            <Button variant="outline-danger" size="sm" onClick={() => HandleQ(1)} disabled={inCart === initialStock}>+</Button>
+            <Button variant="outline-danger" size="sm" onClick={oneLess} disabled={counter === 1}>-</Button>
+            <Link to={`/products/${id}`}>
+                {' '}<Button onClick={onAdd} variant="outline-primary">Agregar {`${counter}`} al carrito</Button>{' '}
+            </Link>
+            <Button variant="outline-danger" size="sm" onClick={oneMore} disabled={setCounter === stock}>+</Button>
         </div>
     )
 }
+
+/* const HandleQ = () => {
+        if (initialStock) {
+            setIncart(inCart ++ )
+        }
+    }
+    const onAdd = () => {
+        setQuantitySelected(inCart)
+
+    } */
 
 export default ItemCount

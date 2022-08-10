@@ -4,7 +4,7 @@ const products = [
         title: "Doble Carne",
         description: "Dos carnes jugosas, doble sabor, más placer",
         price: "$470",
-        img: "./assets/img/doblecarne.jpg",
+        img: "../assets/img/doblecarne.jpg",
         stock: 15,
         type: "hamburguesas"
     },
@@ -13,7 +13,7 @@ const products = [
         title: "Extra Queso",
         description: "Para los amantes del queso, QUESO",
         price: "$480",
-        img: "./assets/img/extraqueso.jpg",
+        img: "../assets/img/extraqueso.jpg",
         stock: 10,
         type: "hamburguesas"
     },
@@ -22,7 +22,7 @@ const products = [
         title: "Veggie",
         description: "Opción vegetariana, hamburguesas para tod@s",
         price: "$450",
-        img: "./assets/img/Veggie.jpg",
+        img: "../assets/img/Veggie.jpg",
         stock: 8,
         type: "hamburguesas"
     },
@@ -31,7 +31,7 @@ const products = [
         title: "Cheese Bomb",
         description: "La especialidad de la casa, si la probas, volvés",
         price: "$500",
-        img: "./assets/img/cheeseboomb.jpg",
+        img: "../assets/img/cheeseboomb.jpg",
         stock: 7,
         type: "hamburguesas"
     },
@@ -40,7 +40,7 @@ const products = [
         title: "Hot Rolls",
         description: "Sushi caliente, fritado en aceite y con abundante salmón ahumado",
         price: "$620",
-        img: "./assets/img/Sushi1.jpg",
+        img: "../assets/img/Sushi1.jpg",
         stock: 22,
         type: "sushi"
     },
@@ -49,7 +49,7 @@ const products = [
         title: "Sushi Rolls",
         description: "Salmón, queso crema y palta, el sushi tradicional, más sabroso.",
         price: "$580",
-        img: "./assets/img/Sushi2.jpg",
+        img: "../assets/img/Sushi2.jpg",
         stock: 10,
         type: "sushi"
     },
@@ -58,7 +58,7 @@ const products = [
         title: "Hot BBcito",
         description: "Langostino, palta, queso crema, rebozado en panko y salsa teriyaki",
         price: "$600",
-        img: "./assets/img/Sushi3.jpg",
+        img: "../assets/img/Sushi3.jpg",
         stock: 8,
         type: "sushi"
     },
@@ -67,7 +67,7 @@ const products = [
         title: "Revolution Roll",
         description: "Heüra y aguacate, con cebolla caramelizada y envoltura de alga wakame",
         price: "$500",
-        img: "./assets/img/Sushi4.jpg",
+        img: "../assets/img/Sushi4.jpg",
         stock: 11,
         type: "sushi"
     }
