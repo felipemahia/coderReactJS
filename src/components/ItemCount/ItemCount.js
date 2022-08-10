@@ -27,14 +27,5 @@ const ItemCount = ({ stock, setQuantitySelected, id }) => {
     )
 }
 
-/* const HandleQ = () => {
-        if (initialStock) {
-            setIncart(inCart ++ )
-        }
-    }
-    const onAdd = () => {
-        setQuantitySelected(inCart)
-
-    } */
 
 export default ItemCount
