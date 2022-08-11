@@ -15,12 +15,10 @@ const ItemDetail = ({ data }) => {
                 <Card.Text>
                     {description}, {price}
                 </Card.Text>
-                <Card.Text>
-                    <p>Tenemos un stock de: {stock}</p>
-                </Card.Text>
+                <Card.Footer className="text-muted">Stock de: {stock} unidades</Card.Footer>
                 {
                     quantitySelected > 1 ? <Button variant="outline-primary"><Link to="/cart">Confirmar compra</Link></Button> :
-                        <ItemCount stock={stock} setQuantitySelected={setQuantitySelected} />
+                        <ItemCount stock={stock} setQuantitySelected={setQuantitySelected} productData={data}/>
                 }
             </Card.Body>
         </Card>

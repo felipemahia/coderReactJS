@@ -2,13 +2,15 @@ import './ItemProduct.scss'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ItemCount from '../ItemCount/ItemCount';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-
 const ItemProduct = ({ data }) => {
-    const { id, title, price, description, img, /* stock */ } = data
+    const { id, title, price, description, img } = data
+
+    /* const addToCart = (e) =>{
+        e.stopPropagation();
+    } */
     return (
 
         <Row xs={1} md={4}>
@@ -19,6 +21,7 @@ const ItemProduct = ({ data }) => {
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>
                             {description}, {price}
+                            
                         </Card.Text>
                         <Link to={`/products/${id}`}>
                             <Button variant="primary">Ver más</Button>

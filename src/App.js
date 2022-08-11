@@ -1,4 +1,4 @@
-import {Routes,Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import './Estilos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
@@ -12,6 +12,7 @@ import Footer from './Footer/Footer';
 import Cart from './pages/Cart';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import CartProvider from './context/CartContext';
 
 function Header() {
   return (
@@ -19,17 +20,16 @@ function Header() {
       <div>
         <NavBar />
       </div>
-       <Routes>
-        <Route path='/' element = {<Home />}/>
+      <CartProvider>
+      <Routes>
+        <Route path='/' element={<Home />} />
         <Route path='/products/:id' element={<ItemDetailContainer />} />
-        <Route path='/category/:categoryId' element={<ItemListContainer />}/> 
-        {/* <Route path='/sushi/:id' element={<Sushi />} /> */}
+        <Route path='/category/:categoryId' element={<ItemListContainer />} />
         <Route path='/contacto' element={< Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path='*' element={<h2>Error 404 - not found</h2>} />
       </Routes>
-      {/* <ItemListContainer /> */}
-      {/*<ItemDetailContainer />*/}
+      </CartProvider>
       <Footer />
     </div>
   );
