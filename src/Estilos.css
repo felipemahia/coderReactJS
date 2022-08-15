@@ -1,1 +1,9 @@
 @import url(./components/NavBar/NavBar.scss);
+@import url(components/ItemCount/ItemCount.scss);
+@import url(components/ItemDetail/ItemDetail.scss);
+@import url(components/ItemDetailContainer/ItemDetailContainer.scss);
+@import url(components/ItemList/ItemList.scss);
+@import url(components/ItemListContainer/ItemListContainer.scss);
+@import url(components/ItemProduct/ItemProduct.scss);
+@import url(Footer/Footer.scss);
+@import url(pages/Cart.scss);
