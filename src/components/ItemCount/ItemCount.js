@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { CartContext } from '../../context/CartContext';
 import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
 
 const ItemCount = ({ stock, id, productData }) => {
     const {addToCart} = useContext(CartContext)
@@ -21,9 +20,7 @@ const ItemCount = ({ stock, id, productData }) => {
     return (
         <div className='contadorProductos'>
             <Button variant="outline-danger" size="sm" onClick={oneLess} disabled={counter === 1}>-</Button>
-            <Link to={`/products/${id}`}>
-                <Button onClick={onAdd} variant="outline-primary">Agregar {`${counter}`} al carrito</Button>
-            </Link>
+            <Button onClick={onAdd} variant="outline-primary">Agregar {`${counter}`} al carrito</Button>
             <Button variant="outline-danger" size="sm" onClick={oneMore} disabled={setCounter === stock}>+</Button>
         </div>
     )
