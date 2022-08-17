@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { CartContext } from '../../context/CartContext';
 import Button from 'react-bootstrap/Button';
 
-const ItemCount = ({ stock, id, productData }) => {
+const ItemCount = ({ stock, productData }) => {
     const {addToCart} = useContext(CartContext)
     const [counter, setCounter] = useState(0)
 
