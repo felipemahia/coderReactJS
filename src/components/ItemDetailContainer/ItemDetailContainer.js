@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import products from '../../utils/productMock';
+import { getFirestore, doc, getDoc } from 'firebase/firestore'
+//import products from '../../utils/productMock';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from "react-router-dom";
 import "./ItemDetailContainer.scss"
@@ -7,18 +8,22 @@ import Container from "react-bootstrap/esm/Container";
 
 const ItemDetailContainer = () => {
 
-    const [producto, setProducto] = useState([])
-    const {id} = useParams()
-    
-    const filterId = products.find (products => products.id === Number(id))
+    const [producto, setProducto] = useState({})
+    const { detalleId } = useParams()
 
-    const getItem = () => new Promise ((resolve, reject )=>{
+    //const filterId = products.find (products => products.id === Number(id))
+
+    /* const getItem = () => new Promise ((resolve, reject )=>{
         setTimeout(() => {
             resolve(filterId)
         }, 2000);
-    })
+    }) */
     useEffect(() => {
-        const ItemAwait = async () => {
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb, 'productos', detalleId);
+        getDoc(queryDoc)
+            .then(res => setProducto({id: res.id, ...res.data()}));
+        /* const ItemAwait = async () => {
             try{
                 const responseLog = await getItem ()
                 setProducto(responseLog)
@@ -27,13 +32,13 @@ const ItemDetailContainer = () => {
                 console.log(error);
             }
         }
-        ItemAwait()
-    }, [])
-    return(
-        
+        ItemAwait() */
+    }, [detalleId])
+    return (
+
         <div className="container">
             <Container>
-            <ItemDetail data={producto} />
+                <ItemDetail data={producto} />
             </Container>
         </div>
     )

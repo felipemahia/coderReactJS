@@ -1,7 +1,8 @@
 import ItemList from '../ItemList/ItemList';
 import React, { useEffect, useState } from 'react';
 import 'bootstrap';
-import products from '../../utils/productMock';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
+
 import { useParams } from 'react-router-dom';
 
 
@@ -10,17 +11,29 @@ const ItemListContainer = ({ section }) => {
     const { categoryId } = useParams()
     //const filterType = products.filter((products) => products.type === type)
 
-    const traerProductos = (categoryId) => new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (categoryId) {
-                resolve(products.filter((products) => products.type === categoryId))
-            } else {
-                resolve(products)
-            }
-        }, 2000)
-    })
+    
 
     useEffect(() => {
+
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'productos');
+        if (categoryId) {
+        const queryFilter = query(queryCollection, where('type', '==', categoryId))
+            getDocs(queryFilter)
+                .then(res => setListProducts(res.docs.map(product => ({id: product.id, ...product.data()}))));
+            } else{
+                getDocs(queryCollection)
+                .then(res => setListProducts(res.docs.map(product => ({id: product.id, ...product.data()}))));
+            }
+        /* const traerProductos = (categoryId) => new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (categoryId) {
+                    resolve(products.filter((products) => products.type === categoryId))
+                } else {
+                    resolve(products)
+                }
+            }, 2000)
+        })
         const getProduct = async () => {
             try {
                 const responseLog = await traerProductos(categoryId)
@@ -30,7 +43,7 @@ const ItemListContainer = ({ section }) => {
                 console.log(error)
             }
         }
-        getProduct()
+        getProduct() */
     }, [categoryId])
 
     return (
